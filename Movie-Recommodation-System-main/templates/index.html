@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation System</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <h1>Movie Recommendation System</h1>
+
+    {% if request.args.get('not_found') %}
+    <p style="color:red;">Movie not found! Please try another one.</p>
+    {% endif %}
+
+    <form action="/recommend" method="POST">
+        <label for="movie">Enter a movie name:</label>
+        <input type="text" id="movie" name="movie_name" placeholder="Type a movie name" required>
+        <button type="submit">Recommend</button>
+    </form>
+</body>
+
+</html>

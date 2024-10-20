@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended Movies</title>
+    <link rel="stylesheet" href="/static/css/recommder.css">
+</head>
+
+<body>
+    <h1>Movies similar to {{ selected_movie }}:</h1>
+    <ul>
+        {% for movie, poster in recommended_movies_data %}
+        <li>
+            <h2>{{ movie }}</h2>
+            {% if poster %}
+            <img src="{{ poster }}" alt="Movie Poster" width="150">
+            {% else %}
+            <p>Poster not available</p>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Go Back</a>
+</body>
+
+</html>
